@@ -1,11 +1,11 @@
-# 歌曲爬取
+# TuneFetch — 曲目批量获取工具
 
 根据 CSV 中的歌曲名和歌手名批量检索歌曲，并将结果保存到指定目录。
 
 ## 目录结构
 
 ```text
-歌曲爬取/
+tunefetch/
 ├─ src/
 │  └─ gequhai_downloader.py   # 主程序
 ├─ examples/
@@ -28,7 +28,7 @@
 ## 安装
 
 ```powershell
-cd "歌曲爬取"
+cd "tunefetch"
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt

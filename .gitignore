@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Editors and local tools
+.vscode/
+.idea/
+.claude/
+
+# Downloaded media and reports
+downloads/
+*.mp3
+*.flac
+*.m4a
+*.wav
+*.ogg
+report.csv
+
+# Logs and temporary files
+*.log
+*.tmp
+*.part
+.DS_Store
+Thumbs.db

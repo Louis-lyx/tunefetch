@@ -1,2 +1,81 @@
-# tunefetch
-TuneFetch 是一款基于 Python 与 Playwright 的批量曲目检索和下载工具。它可以读取包含歌曲名与歌手名的 CSV 清单，自动完成搜索、匹配、下载及结果记录，并支持断点复用、延迟控制和仅匹配测试;简单来说就是下载盗版网站批量下载mp3格式歌曲的工具
+# 歌曲爬取
+
+根据 CSV 中的歌曲名和歌手名批量检索歌曲，并将结果保存到指定目录。
+
+## 目录结构
+
+```text
+歌曲爬取/
+├─ src/
+│  └─ gequhai_downloader.py   # 主程序
+├─ examples/
+│  └─ songs.example.csv       # 输入格式示例
+├─ input/
+│  └─ songs.csv               # 当前歌曲清单
+├─ downloads/                 # 下载输出（Git 忽略）
+├─ .gitignore
+├─ requirements.txt
+└─ run.bat                    # Windows 快速启动
+```
+
+## 环境要求
+
+- Windows 10/11
+- Python 3.10+
+- Microsoft Edge（默认浏览器通道）
+- 系统自带或可调用的 `curl.exe`
+
+## 安装
+
+```powershell
+cd "歌曲爬取"
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+```
+
+## 输入格式
+
+CSV 使用 UTF-8 编码，表头为：
+
+```csv
+song,artist
+Let Go,Beau Young Prince
+```
+
+## 使用
+
+直接运行：
+
+```powershell
+python .\src\gequhai_downloader.py .\input\songs.csv -o .\downloads
+```
+
+或者双击 `run.bat`。
+
+仅检查匹配结果，不下载：
+
+```powershell
+python .\src\gequhai_downloader.py .\examples\songs.example.csv --dry-run
+```
+
+显示浏览器窗口：
+
+```powershell
+python .\src\gequhai_downloader.py .\input\songs.csv --show-browser
+```
+
+程序会在输出目录生成 `report.csv`，记录每首歌曲的处理状态。
+
+## 发布到 GitHub
+
+下载文件、报告、缓存和本地配置已由 `.gitignore` 排除。提交前可执行：
+
+```powershell
+git init
+git add .
+git status
+git commit -m "Initial commit"
+```
+
+请仅处理你有权获取和使用的音频内容，并遵守来源网站的服务规则。

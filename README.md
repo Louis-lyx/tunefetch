@@ -1,5 +1,11 @@
 # TuneFetch — 曲目批量获取工具
 
+一开始写这个其实只是为了玩gtaol的时候能导入自己的歌曲创建子电台，但发现需要歌曲的未加密的mp3格式，网上苦苦搜寻一顿发现没有相关开源程序（也许是我没找到），于是整了一个这自用感觉还挺好的，遂开源。
+
+选的下载网站是歌曲海。
+
+安全声明：仅用于测试，任何版权责任问题概不负责。
+
 根据 CSV 中的歌曲名和歌手名批量检索歌曲，并将结果保存到指定目录。
 
 ## 目录结构
@@ -67,15 +73,4 @@ python .\src\gequhai_downloader.py .\input\songs.csv --show-browser
 
 程序会在输出目录生成 `report.csv`，记录每首歌曲的处理状态。
 
-## 发布到 GitHub
 
-下载文件、报告、缓存和本地配置已由 `.gitignore` 排除。提交前可执行：
-
-```powershell
-git init
-git add .
-git status
-git commit -m "Initial commit"
-```
-
-请仅处理你有权获取和使用的音频内容，并遵守来源网站的服务规则。
